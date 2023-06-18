@@ -90,8 +90,83 @@ public:
 	}
 
 };
+
+class Human
+{
+	string name;
+	int age;
+	int weight;
+
+	static int count;
+public:
+	static  int getCount()
+	{
+		return count;
+	}
+	Human() :name{ "" }, age{ 0 }, weight{ 0 } { count++; }
+	//Human() :name(""), age( 0 ), weight( 0 ) {}
+	/*{
+		name = "";
+		age = 0;
+		weight = 0;
+	}*/
+	Human(string name) : Human()
+	{
+		this->name = name;
+		//age = 0;
+		//weight = 0;
+	}
+	Human(string name, int age):Human(name)
+	{
+		//this->name = name;
+		this->age = age;
+		//weight = 0;
+	}
+	Human(string name, int age, int weight):Human(name,age)
+	{
+		//this->name = name;
+		//this->age = age;
+		this->weight = weight;
+	}
+	void Show()
+	{
+		cout << "Name : " << name << endl;
+		cout << "Age : " << age << endl;
+		cout << "Weight : " << weight << endl;
+		cout << "Count : " << count << endl;
+	}
+	~Human()
+	{
+		count--;
+	}
+};
+
+int Human::count = 0;
+
 int main()
 {
+	Human h;
+
+	h.Show();
+	Human h2("Petro");
+
+	h2.Show();
+	Human h3("Ivan", 12);
+	h3.Show();
+	if (true)
+	{
+		Human h4("Ivanka", 17, 44);
+		h4.Show();
+	}
+	
+	
+
+	cout << "Count human : " << h.getCount() << endl;
+	cout << "Count human : " << h2.getCount() << endl;
+	cout << "Count human : " << h3.getCount() << endl;
+	cout << "Count human : " << Human::getCount() << endl;
+
+	/*
 	Student testSt;					// виклик конструктора за замовчуванням
 	Student st("Viktor", 15);	// виклик параметризованого конструктора
 
@@ -106,7 +181,7 @@ int main()
 		Student copy = Student(st);
 		copy.Print();
 	}
-	
+	*/
     /*
     int a;//4b
     int b = 10;
