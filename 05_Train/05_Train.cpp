@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <string>
 
 using namespace std;
 //    Для масиву вагонів створити окрему структуру
@@ -105,23 +106,95 @@ public:
         }
         return newTrain;
     }
+    void operator++()//prefix
+    {
+        for (int i = 0; i < wagonCount; i++)
+        {
+            wagons[i].passengerCount++;
+        }
+    }
+    Vagon getVagon(int index)
+    {
+        if (index < 0 || index >= wagonCount) return Vagon();
+        return wagons[index];
+    }
+    Vagon operator[](int index)
+    {
+        if (index < 0 || index >= wagonCount) return Vagon();
+        return wagons[index];
+    }
+    void ChangePassangers(int count)
+    {
+        for (int i = 0; i < wagonCount; i++)
+        {
+            wagons[i].passengerCount += count;
+        }
+    }
+    void operator()(int count)
+    {
+        for (int i = 0; i < wagonCount; i++)
+        {
+            wagons[i].passengerCount += count;
+        }
+    }
+    void operator()(int count,int number)
+    {
+
+        for (int i = 0; i < wagonCount; i++)
+        {
+            if (wagons[i].number == number)
+            {
+                wagons[i].passengerCount += count;
+            }
+        }
+    }
+    operator string()
+    {
+        //string res = "";
+        //for (int i = 0; i < wagonCount; i++)
+        //{
+        //    res += to_string( wagons[i].number) + " ";//1 + " " +  2 + " " + 3  + " " + 4 1 2 3 4 
+        //}
+        //return res;
+        return model;
+    }
 };
 
 void main()
 {
+
     Train train("Tomas");
     train.AddVagon(Vagon{ 1,15,3 });
     train.AddVagon(Vagon{ 2,23,4 });
     train.AddVagon(Vagon{ 3,21,5 });
     train.AddVagon(Vagon{ 4,11,6 });
-    train.Show();
+    //train.Show();
     Train NewTrain(train);//copy ctor
     NewTrain.Addonepassenger(1);
     NewTrain.Addonepassenger(2);
     NewTrain.Addonepassenger(3);
     NewTrain.Addonepassenger(4);
-    NewTrain.Show();
+    //NewTrain.Show();
     cout << "-----------------------" << endl;
     Train superTrain = train + NewTrain;
+    //superTrain.Show();
+    cout << "-----------------------" << endl;
+    ++superTrain;
     superTrain.Show();
+    cout << "********************************" << endl;
+
+    Vagon v = superTrain.getVagon(1);
+    //v.print();
+    v = superTrain[2];
+    //v.print();
+    superTrain.ChangePassangers(5);
+    superTrain(5);
+    superTrain(50, 1);
+    cout << "-----------------------" << endl;
+    //superTrain.Show();
+
+    cout << (string)superTrain << endl;
+
+
+
 }
