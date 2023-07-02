@@ -152,7 +152,7 @@ int main()
     //Print(10);//int => Array - implicit
     Print(Array(15));//explicit
     Array arr2(arr);
-    Array arr2= arr;
+    //Array arr2= arr;
     Print(arr2);
 
     float d = 3.1321564;
