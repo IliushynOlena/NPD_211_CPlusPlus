@@ -116,11 +116,14 @@ public:
 		x = y = value;
 	}
 	NewPoint(T_X x, T_Y y) :x(x), y(y) {}
-	void Print()const
-	{
-		cout << "X : " << x << " Y: " << y << endl;
-	}
+	void Print()const;
+	
 };
+template<typename T_X, typename T_Y>
+void NewPoint<T_X, T_Y>::Print()const
+{
+	cout << "X : " << x << " Y: " << y << endl;
+}
 int main()
 {
 	Point<int> p1(100, 150);

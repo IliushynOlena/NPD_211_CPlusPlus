@@ -70,8 +70,8 @@ public:
 	}
 	Point operator =(const Point& other)
 	{
-		this->x = other.x;//10.....3
-		this->y = other.y;//7.....2
+		this->x = other.x;//3.....3
+		this->y = other.y;//2.....2
 		return *this;//*address = Point(12,11);
 	}
 
