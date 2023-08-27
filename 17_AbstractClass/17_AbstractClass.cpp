@@ -54,6 +54,7 @@ public:
     {
         cout << "I am running with speed : " << runSpeed << " km/h" << endl;
     }
+    //virtual void MakeSound() = 0;//pure virtual
     void MakeSound() override
     {
         cout << "Rrrrrrrrrr-rrrrrrrr-rrrrrrrrr" << endl;

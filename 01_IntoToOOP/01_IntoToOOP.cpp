@@ -121,7 +121,7 @@ public:
 //
 //};
 
-class Student
+class Person
 {
 private:
     //data members -змінні-члени класу
@@ -133,7 +133,7 @@ private:
     float averageMark;
 public:
     //ctor + TAB
-    Student()
+    Person()
     {
         cout << "Default constructor  " <<name << endl;
         name = "none";
@@ -142,7 +142,7 @@ public:
         countMark = 0;
         averageMark = 0;
     }
-    Student(string name)
+    Person(string name)
     {
         cout << "Parametrized  constructor "<<name << endl;
         this->name = name;
@@ -151,7 +151,7 @@ public:
         countMark = 0;
         averageMark = 0;
     }
-    Student(string name, int age)
+    Person(string name, int age)
     {
         cout << "Parametrized  constructor " << name << endl;
         this->name = name;
@@ -217,7 +217,7 @@ public:
     }
 
     //~ + TAB
-    ~Student()
+    ~Person()
     {
         cout << "Destructor "<<name << endl;
         if (marks != nullptr)
@@ -228,14 +228,14 @@ public:
 int main()
 {
     
-    Student st;//default
+    Person st;//default
     st.Print();
 
 
-    Student st2("Olena");
+    Person st2("Olena");
     st2.Print();
 
-    Student st3("Petro", 12);
+    Person st3("Petro", 12);
     st3.AddMark(8);
     st3.AddMark(9);
     st3.AddMark(12);

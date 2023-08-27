@@ -7,7 +7,7 @@ struct Point
     int y;
 };
 
-class Student
+class Person
 {
 private:
 	string name;//Victor
@@ -20,7 +20,7 @@ public:
 	// Використовується для ініціалізації полів
 
 	// Конструктора за замовчуванням (default ctor) - без параметрів
-	Student()
+	Person()
 	{
 		name = "";
 		age = 0;
@@ -29,7 +29,7 @@ public:
 	}
 
 	// Параметризований конструктор - який приймає якісь параметри
-	Student(string name, int age)
+	Person(string name, int age)
 	{
 		this->name = name;
 		this->age = age;
@@ -40,7 +40,7 @@ public:
 	}
 	// Деструктор - метод, який викликається автоматично при видаленні об'єкта класу
 	// Використовується для очищення пам'яті, звільнення ресурсів і тд.
-	~Student()
+	~Person()
 	{
 		if (marks != nullptr)
 			delete[] marks;
@@ -74,7 +74,7 @@ public:
 
 		++marksCount;
 	}
-	Student(const Student &other)
+	Person(const Person &other)
 	{
 		this->name = other.name;//Victor
 		this->age = other.age;//15

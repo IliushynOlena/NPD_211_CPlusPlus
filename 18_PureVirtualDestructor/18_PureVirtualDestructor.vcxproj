@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7c24cec0-e9d5-48ee-b878-f90363dacf78}</ProjectGuid>
-    <RootNamespace>My17AbstractClass</RootNamespace>
+    <ProjectGuid>{074d7432-8455-42ad-939b-3e627232750e}</ProjectGuid>
+    <RootNamespace>My18PureVirtualDestructor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="17_AbstractClass.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClCompile Include="18_PureVirtualDestructor.cpp" />
+    <ClCompile Include="PureVirtualDestructor2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
