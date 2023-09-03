@@ -113,9 +113,9 @@ public:
             wagons[i].passengerCount++;
         }
     }
-    Vagon getVagon(int index)
+    Vagon getVagon(int index)//20--- 100   -10
     {
-        if (index < 0 || index >= wagonCount) return Vagon();
+        if (index < 0 || index >= wagonCount) return Vagon();//return; work as break
         return wagons[index];
     }
     Vagon operator[](int index)

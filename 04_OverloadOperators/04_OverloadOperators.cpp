@@ -186,6 +186,8 @@ int main()
 
 	Point p1(10, 7);
 	Point p2(2, 3);
+	p1.Print();
+	cout << p1;
 
 	int a = 5;
 	cout << a << endl;

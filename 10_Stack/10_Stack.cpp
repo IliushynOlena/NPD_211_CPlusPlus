@@ -86,12 +86,18 @@ public:
 			arr[++topIndex] = value;
 			return true;
 		}
+		else
+		{
+
+		}
 		return false;
 	}
 	int Pop()
 	{
 		if (!IsEmpty())
 			return arr[topIndex--];
+		//else
+
 	}
 	int GetCount()const
 	{
@@ -101,6 +107,7 @@ public:
 	{
 		if (!IsEmpty())
 			return arr[topIndex];
+		//else
 	}
 	void Clear()
 	{
@@ -121,6 +128,8 @@ public:
 			cout << arr[i] << " ";
 		}
 		cout << endl;
+
+
 	}
 	~Stack()
 	{
