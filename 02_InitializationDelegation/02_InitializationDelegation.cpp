@@ -90,18 +90,33 @@ public:
 	}
 
 };
-
+struct Data
+{
+	//public
+	int day;
+	int month;
+	int year;
+};
 class Human
 {
+	//private:
 	string name;
 	int age;
 	int weight;
+	Data birthday;
+
 
 	static int count;
 public:
-	static  int getCount()
+	static int getCount()
 	{
 		return count;
+	}
+	void Test()
+	{
+	
+		int a = 5;
+		cout << a << endl;
 	}
 	Human() :name{ "" }, age{ 0 }, weight{ 0 } { count++; }
 	//Human() :name(""), age( 0 ), weight( 0 ) {}
@@ -124,12 +139,17 @@ public:
 	}
 	Human(string name, int age, int weight):Human(name,age)
 	{
+
 		//this->name = name;
 		//this->age = age;
 		this->weight = weight;
 	}
-	void Show()
+	void Show()const
 	{
+		
+		//this->age = 10;
+		//cout << this->age << endl;
+		//name = "Ivan";
 		cout << "Name : " << name << endl;
 		cout << "Age : " << age << endl;
 		cout << "Weight : " << weight << endl;
@@ -145,7 +165,10 @@ int Human::count = 0;
 
 int main()
 {
+	Human::getCount();
+	
 	Human h;
+	h.getCount();
 
 	h.Show();
 	Human h2("Petro");

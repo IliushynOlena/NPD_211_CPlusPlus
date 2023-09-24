@@ -142,7 +142,8 @@ int main()
     //string hello = "hello";
     //Test(hello);
     int size = 8;
-    Array arr(size);
+    //Array arr3 = 15;
+    Array arr(size);//constructor
     for (int i = 0; i < size; i++)
     {
         arr.setValue(i, size - i - 1);

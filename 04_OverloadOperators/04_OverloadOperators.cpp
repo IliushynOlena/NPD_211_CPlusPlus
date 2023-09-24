@@ -112,6 +112,7 @@ public:
 	}
 	Point operator--(int)//постфіксна форма декременту
 	{
+		
 		this->x--;
 		this->y--;
 		return *this;
